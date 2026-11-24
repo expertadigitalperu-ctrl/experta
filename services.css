@@ -1,0 +1,59 @@
+/* Original product interfaces: one coherent demonstration across four services. */
+.service-gallery > .service-title { order: 0; padding: 0 0 18px; min-height: 94px; }
+.service-gallery { gap: 0; min-width: 0; }
+.service-gallery .example-panel[hidden] { display: none !important; }
+.example-tabs { display: flex; gap: 8px; margin: 0 0 16px; }
+.example-tab {
+ flex: 1; min-width: 0; min-height: 52px; padding: 10px 12px; border: 1px solid #9aadd12b;
+ border-radius: 9px; background: #ffffff03; color: #aabbd8; font: 500 11px/1.55 Poppins,Arial,sans-serif;
+ text-align: left; cursor: pointer; transition: border-color .2s ease,background .2s ease;
+}
+.example-tab[aria-pressed="true"] { color: #effaff; border-color: #48c6de8c; background: #38b9db0c; }
+.example-tab:hover { border-color: #8ca6ce; }
+.example-tab:focus-visible,.service-play:focus-visible { outline: 2px solid #00e5ff; outline-offset: 4px; }
+.product-preview video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.example-foot { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #899fbe; font-size: 10px; }
+.service-play { min-height: 44px; padding: 8px 0 8px 10px; border: 0; color: #c1d4ed; background: transparent; cursor: pointer; font: 500 10px Poppins,Arial,sans-serif; }
+.service-play:hover { color: #58dfef; }
+.demo-actions { display: flex; align-items: center; gap: 16px; }
+.service-expand { min-height: 44px; padding: 8px 0; font: 500 10px Poppins,Arial,sans-serif; color: #9fb9d8; background: none; border: 0; cursor: pointer; }
+.service-expand:hover { color: #58dfef; }
+.service-expand:focus-visible,.viewer-close:focus-visible { outline: 2px solid #00e5ff; outline-offset: 4px; }
+dialog.demo-viewer { width: min(1160px,94vw); max-width: none; max-height: 94dvh; margin: auto; padding: 16px; color: #e8f2ff; border: 1px solid #738aa755; border-radius: 16px; background: #111833; }
+.demo-viewer::backdrop { background: #030814dc; backdrop-filter: blur(8px); }
+.viewer-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 12px; }
+.viewer-header h2 { margin: 0; font: 500 18px/1.4 Montserrat,Arial,sans-serif; letter-spacing: -.02em; }
+.viewer-close { min-height: 44px; padding: 8px 16px; border: 1px solid #9bb0d13b; border-radius: 8px; background: #ffffff08; color: #d7e7f9; cursor: pointer; }
+.demo-viewer video { display: block; width: 100%; max-height: calc(94dvh - 95px); border-radius: 9px; background: #071026; }
+.demo-viewer img { display: block; width: 100%; max-height: calc(94dvh - 95px); object-fit: contain; border-radius: 9px; }
+.demo-viewer [hidden] { display: none !important; }
+@media(max-width:760px) { .service-gallery > .service-title { min-height: 0; padding: 0 0 16px; } .example-tab { font-size: 10px; } }
+.services-grid { gap: 36px 28px; }
+.product-service { padding: 0; overflow: visible; box-shadow: none; }
+.product-preview {
+  height: auto; aspect-ratio: 8 / 5; border-radius: 14px;
+  background: #0b102b; border: 1px solid #7186b24a;
+  box-shadow: 0 16px 35px #03071a26;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.product-preview::after { display: none; }
+.product-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.product-service .service-title { align-items: flex-start; padding: 20px 0 0; gap: 14px; }
+.product-service .service-title > span:first-child { padding-top: 5px; font-size: 11px; }
+.product-service .service-title > div { flex: 1; min-width: 0; }
+.product-service .service-title h3 { font-size: 19px; font-weight: 600; line-height: 1.4; }
+.product-service .service-title p { margin: 8px 0 0; font-size: 12px; line-height: 1.7; color: #b3bfd9; }
+.product-service .service-tag { color: #8999ba; font-size: 9px; line-height: 1.5; padding-top: 6px; white-space: nowrap; }
+.services-context { color: #8f9fbd; font-size: 11px; line-height: 1.7; margin: 28px 0 0; }
+.services .service-gallery > .service-title { order: 0; padding: 0 0 18px; }
+@media (hover:hover) and (pointer:fine) {
+  .product-service:hover .product-preview { border-color: #8498c5; box-shadow: 0 16px 40px #02051d50; }
+}
+@media (max-width: 1100px) { .product-service .service-tag { display: none; } }
+@media (max-width: 760px) {
+  .services-grid { gap: 30px; }
+  .product-service .service-title { padding-top: 16px; gap: 12px; }
+  .product-service .service-title h3 { font-size: 18px; }
+  .product-service .service-title p { font-size: 12px; margin-top: 6px; }
+  .services-context { font-size: 10px; margin-top: 24px; }
+}

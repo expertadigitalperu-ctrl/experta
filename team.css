@@ -1,0 +1,31 @@
+/* Photo-ready team portraits, with temporary initials. */
+.team-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; }
+.team .person { display: flex; flex-direction: column; padding: 0; border: 0; background: transparent; border-radius: 0; gap: 0; }
+.team .portrait {
+  position: relative; height: auto; width: 100%; aspect-ratio: 4 / 5;
+  overflow: hidden; border: 1px solid #a6b7e122; border-radius: 14px;
+  background: radial-gradient(ellipse at 10% 0%,#2b547027,transparent 70%),#121a32;
+  transition: border-color .25s ease;
+}
+.team .portrait-two { background: radial-gradient(ellipse at 10% 0%,#176e7427,transparent 70%),#121a32; }
+.team .portrait-three { background: radial-gradient(ellipse at 10% 0%,#7346a827,transparent 70%),#121a32; }
+.team .portrait::after {
+  display: block; content: ''; position: absolute; left: 24px; bottom: 0; width: 42px; height: 2px;
+  background: linear-gradient(90deg,#00e5ff,#8050f7); opacity: .65;
+}
+.team .portrait-initials { font-size: clamp(66px,7vw,92px); color: #a7b7d366; font-weight: 400; letter-spacing: -.055em; }
+.team .portrait img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.team .person-info { padding: 22px 0 0; background: transparent; flex: 1; }
+.team .person-info h3 { font-size: 23px; line-height: 1.3; font-weight: 500; margin-bottom: 9px; }
+.team .person-info > span { color: #a6b5d3; font-size: 10px; letter-spacing: .065em; line-height: 1.7; }
+.team .person-info p { max-width: 31ch; margin-top: 14px; margin-bottom: 0; font-size: 14px; line-height: 1.75; color: #bdc7df; }
+@media (hover:hover) and (pointer:fine) { .team .person:hover .portrait { border-color: #9cacd354; } }
+@media (max-width: 760px) {
+  .team-grid { grid-template-columns: 1fr; gap: 32px; }
+  .team .portrait { aspect-ratio: 4 / 5; }
+  .team .portrait-initials { font-size: 76px; }
+  .team .person-info { padding-top: 18px; }
+  .team .person-info h3 { font-size: 22px; }
+  .team .person-info p { max-width: 36ch; font-size: 13px; margin-top: 10px; }
+}
+@media (prefers-reduced-motion:reduce) { .team .portrait { transition: none; } }
